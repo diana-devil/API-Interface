@@ -1,0 +1,10 @@
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+
+#apiClient 的两个参数
+#api:
+#  client:
+#    access-key: diane
+#    secret-key: diana

@@ -1,0 +1,39 @@
+# 配置端口号
+server:
+  port: 8090
+
+# 配置网关
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: api_route
+          # 转发路由
+          uri: http://localhost:8123
+          predicates:
+            # 路径断言
+            - Path=/api/**
+
+# 配置 apiClient
+api:
+  client:
+    access-key: diane
+    secret-key: diana
+
+# 配置日志
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: info
+
+
+dubbo:
+  application:
+    name: api-gateway
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://localhost:8848
